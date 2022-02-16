@@ -26,6 +26,7 @@ namespace BlockChainProcessor.Core.Statics
             public const string FileNotExist = "Error. The file does not exist.";
             public const string NftOwned = "Token {0} is owned by {1}.";
             public const string NftNotOwned = "Token {0} is not owned by any wallet.";
+            public const string WalletCommand = "Wallet {0} holds {1} Tokens:";
         }
     }
 }
