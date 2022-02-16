@@ -33,4 +33,3 @@ This program has only ConsoleLogger. But the program can add more loggers in the
 - And also, this project used the strategy pattern for future implementation.
 - And singleton pattern also has been used for some classes to make sure it creates only one instance throughout the project.
 - Some custom exception class has been added to handle specific errors.
-[https://drive.google.com/file/d/17dMpDYA6SF58Vw8IgsaTooXgL5wKf0Zc]: https://drive.google.com/file/d/17dMpDYA6SF58Vw8IgsaTooXgL5wKf0Zc
