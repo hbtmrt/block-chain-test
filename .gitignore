@@ -3,3 +3,9 @@
 ################################################################################
 
 /BlockChainProcessor/BlockChainProcessor/obj
+/BlockChainProcessor/BlockChainProcessor/bin/Debug/netcoreapp3.1
+/.vs/block-chain-test/v16/.suo
+/.vs
+/BlockChainProcessor/.vs/BlockChainProcessor/v16/.suo
+/BlockChainProcessor/BlockChainProcessor.Core/obj
+/BlockChainProcessor/BlockChainProcessor.Core/bin/Debug/netcoreapp3.1

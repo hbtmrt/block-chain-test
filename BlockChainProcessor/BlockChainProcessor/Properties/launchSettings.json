@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BlockChainProcessor": {
+      "commandName": "Project",
+      "commandLineArgs": "--read-inline '{\\\"Type\\\": \\\"Mint\\\", \\\"TokenId\\\": \\\"0xA000000000000000000000000000000000000000\\\", \\\"Address\\\":\\\"0x1000000000000000000000000000000000000000\\\"}'"
+    }
+  }
+}
