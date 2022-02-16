@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BlockChainProcessor.Core.Statics
+﻿namespace BlockChainProcessor.Core.Statics
 {
     public static class Constants
     {
@@ -27,6 +23,7 @@ namespace BlockChainProcessor.Core.Statics
             public const string NftOwned = "Token {0} is owned by {1}.";
             public const string NftNotOwned = "Token {0} is not owned by any wallet.";
             public const string WalletCommand = "Wallet {0} holds {1} Tokens:";
+            public const string Reset = "Program was reset.";
         }
     }
 }

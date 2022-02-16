@@ -5,7 +5,7 @@ namespace BlockChainProcessor
 {
     public sealed class BlockChain
     {
-        private static readonly BlockChain instance = new BlockChain();
+        private static BlockChain instance = new BlockChain();
 
         public static BlockChain Instance() => instance;
 
@@ -16,6 +16,11 @@ namespace BlockChainProcessor
         {
             Blocks = new List<Block>();
             Wallets = new List<Wallet>();
+        }
+
+        public void Reset()
+        {
+            instance = new BlockChain();
         }
     }
 }
