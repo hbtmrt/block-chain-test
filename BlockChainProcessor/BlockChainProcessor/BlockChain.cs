@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace BlockChainProcessor
 {
+    /// <summary>
+    /// This contains the data.
+    /// </summary>
     public sealed class BlockChain
     {
         private static BlockChain instance = new BlockChain();

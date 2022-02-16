@@ -3,6 +3,9 @@ using BlockChainProcessor.TransactionExcecutors;
 
 namespace BlockChainProcessor.Factories
 {
+    /// <summary>
+    /// Resolves the type of the Transaction Excecutor based on the transaction type.
+    /// </summary>
     public sealed class TransactionExcecutorFactory
     {
         public ITransactionExcecutor CreateInstance(TransactionType type)

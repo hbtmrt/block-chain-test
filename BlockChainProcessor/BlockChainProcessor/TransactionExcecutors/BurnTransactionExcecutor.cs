@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace BlockChainProcessor.TransactionExcecutors
 {
+    /// <summary>
+    /// Implements Burn transaction related functions.
+    /// </summary>
     public sealed class BurnTransactionExcecutor : ITransactionExcecutor
     {
         private readonly BlockChain blockChain = BlockChain.Instance();

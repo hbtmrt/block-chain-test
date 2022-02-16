@@ -42,20 +42,19 @@ namespace BlockChainProcessor
                     ICommandProcessor commandProcessor = new CommandProcessorFactory().CreateInstance(commandString);
                     commandProcessor.Excecute(parameterString);
                 }
-                catch (BCDeserializatoinException ex)
+                catch (BCDeserializatoinException)
                 {
                     logger.Write(Constants.Message.ParameterFormatError);
                 }
-                catch (BCNotAFilePathException ex)
+                catch (BCNotAFilePathException)
                 {
                     logger.Write(Constants.Message.NotAValidFilePath);
                 }
-
-                catch (BCFileNotExistException ex)
+                catch (BCFileNotExistException)
                 {
                     logger.Write(Constants.Message.FileNotExist);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     logger.Write(Constants.Message.CommonError);
                 }

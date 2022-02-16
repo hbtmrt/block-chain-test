@@ -1,5 +1,8 @@
 ﻿namespace BlockChainProcessor.Core.Statics
 {
+    /// <summary>
+    /// Store the constant values across the project.
+    /// </summary>
     public static class Constants
     {
         public static class Command

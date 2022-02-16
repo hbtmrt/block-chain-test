@@ -1,5 +1,4 @@
-﻿using BlockChainProcessor.Core.CustomExceptions;
-using BlockChainProcessor.Core.Models;
+﻿using BlockChainProcessor.Core.Models;
 using BlockChainProcessor.Core.Statics;
 using BlockChainProcessor.Factories;
 using BlockChainProcessor.Loggers;
@@ -8,6 +7,9 @@ using System.Linq;
 
 namespace BlockChainProcessor.Commands
 {
+    /// <summary>
+    /// Handles --wallet operations.
+    /// </summary>
     public sealed class WalletOwnershipCommandProcessor : ICommandProcessor
     {
         private readonly BlockChain blockChain = BlockChain.Instance();

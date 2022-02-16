@@ -2,6 +2,9 @@
 
 namespace BlockChainProcessor.Core.Requests
 {
+    /// <summary>
+    /// The transaction request model.
+    /// </summary>
     public sealed class TransactionRequest
     {
         public TransactionType Type { get; set; }

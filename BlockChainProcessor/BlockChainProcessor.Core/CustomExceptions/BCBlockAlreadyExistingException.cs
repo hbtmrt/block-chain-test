@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BlockChainProcessor.Core.CustomExceptions
 {
+    /// <summary>
+    /// Used when the block already exists in the data.
+    /// </summary>
     public class BCBlockAlreadyExistingException : Exception
     {
     }

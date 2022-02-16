@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace BlockChainProcessor.TransactionExcecutors
 {
+    /// <summary>
+    /// Transfers blocks from the wallet to another wallet.
+    /// </summary>
     public sealed class TransferTransactionExcecutor : ITransactionExcecutor
     {
         private readonly BlockChain blockChain = BlockChain.Instance();

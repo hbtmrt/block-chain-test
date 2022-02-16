@@ -1,10 +1,10 @@
 ﻿using BlockChainProcessor.Core.Requests;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BlockChainProcessor.TransactionExcecutors
 {
+    /// <summary>
+    /// Defines methods related to transaction excecutors.
+    /// </summary>
     public interface ITransactionExcecutor
     {
         bool Excecute(TransactionRequest transactionRequest);

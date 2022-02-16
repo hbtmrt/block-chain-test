@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace BlockChainProcessor.TransactionExcecutors
 {
+    /// <summary>
+    /// Adds records to the wallets and blocks.
+    /// </summary>
     public sealed class MintTransactionExcecutor : ITransactionExcecutor
     {
         private readonly BlockChain blockChain = BlockChain.Instance();

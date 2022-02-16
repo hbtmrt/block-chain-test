@@ -4,6 +4,9 @@ using BlockChainProcessor.Loggers;
 
 namespace BlockChainProcessor.Commands
 {
+    /// <summary>
+    /// Handles --reset operation.
+    /// </summary>
     public sealed class ResetCommandProcessor : ICommandProcessor
     {
         private readonly BlockChain blockChain = BlockChain.Instance();

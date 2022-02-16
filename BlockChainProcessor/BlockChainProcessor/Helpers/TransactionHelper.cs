@@ -8,6 +8,9 @@ using System.Collections.Generic;
 
 namespace BlockChainProcessor.Helpers
 {
+    /// <summary>
+    /// A helper to deal with transactions.
+    /// </summary>
     public sealed class TransactionHelper
     {
         private readonly ILogger logger = new LoggerFactory().CreateLogger();

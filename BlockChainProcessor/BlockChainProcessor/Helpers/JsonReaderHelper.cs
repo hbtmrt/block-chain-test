@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace BlockChainProcessor.Helpers
 {
+    /// <summary>
+    /// A helper to deal with Json related opeartions.
+    /// </summary>
     public sealed class JsonReaderHelper
     {
         public T Deserialize<T>(string jsonString)

@@ -1,5 +1,8 @@
 ﻿namespace BlockChainProcessor.Helpers
 {
+    /// <summary>
+    /// A helper to deal with command line arguments.
+    /// </summary>
     public sealed class ArgumentHelper
     {
         internal string GetCommandString(string commandArgument)

@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace BlockChainProcessor.Commands
 {
+    /// <summary>
+    /// Handles NFT operations.
+    /// </summary>
     public sealed class NftOwnershipCommandProcessor : ICommandProcessor
     {
         private readonly BlockChain blockChain = BlockChain.Instance();

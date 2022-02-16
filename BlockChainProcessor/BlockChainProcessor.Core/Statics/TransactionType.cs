@@ -1,5 +1,8 @@
 ﻿namespace BlockChainProcessor.Core.Statics
 {
+    /// <summary>
+    /// The type of transactions.
+    /// </summary>
     public enum TransactionType
     {
         Mint,

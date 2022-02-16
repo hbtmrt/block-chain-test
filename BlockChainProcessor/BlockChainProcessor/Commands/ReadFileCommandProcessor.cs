@@ -4,6 +4,9 @@ using System.IO;
 
 namespace BlockChainProcessor.Commands
 {
+    /// <summary>
+    /// Handles --read-file operations.
+    /// </summary>
     public sealed class ReadFileCommandProcessor : ICommandProcessor
     {
         public void Excecute(string parameterString)
