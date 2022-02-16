@@ -1,4 +1,5 @@
 ﻿using BlockChainProcessor.Commands;
+using BlockChainProcessor.Core.CustomExceptions;
 using BlockChainProcessor.Core.Statics;
 using BlockChainProcessor.Factories;
 using BlockChainProcessor.Helpers;
@@ -41,10 +42,22 @@ namespace BlockChainProcessor
                     ICommandProcessor commandProcessor = new CommandProcessorFactory().CreateInstance(commandString);
                     commandProcessor.Excecute(parameterString);
                 }
+                catch (BCDeserializatoinException ex)
+                {
+                    logger.Write(Constants.Message.ParameterFormatError);
+                }
+                catch (BCNotAFilePathException ex)
+                {
+                    logger.Write(Constants.Message.NotAValidFilePath);
+                }
+
+                catch (BCFileNotExistException ex)
+                {
+                    logger.Write(Constants.Message.FileNotExist);
+                }
                 catch (Exception ex)
                 {
-                    // Show error and let the user to type again.
-                    Console.WriteLine("Error....");
+                    logger.Write(Constants.Message.CommonError);
                 }
             }
         }

@@ -18,7 +18,7 @@ namespace BlockChainProcessor.TransactionExcecutors
                 AddToWallet(transactionRequest.Address, block);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

@@ -3,6 +3,7 @@ using BlockChainProcessor.Core.Statics;
 using BlockChainProcessor.Factories;
 using BlockChainProcessor.Loggers;
 using BlockChainProcessor.TransactionExcecutors;
+using System;
 using System.Collections.Generic;
 
 namespace BlockChainProcessor.Helpers
@@ -25,6 +26,24 @@ namespace BlockChainProcessor.Helpers
             });
 
             logger.Write(string.Format(Constants.Message.MintSuccessfulFormat, transactionCount));
+        }
+
+        internal void Excecute(string parameterString)
+        {
+            List<TransactionRequest> transactions = new List<TransactionRequest>();
+
+            try
+            {
+                var transaction = new JsonReaderHelper().Deserialize<TransactionRequest>(parameterString);
+                transactions.Add(transaction);
+            }
+            catch (Exception)
+            {
+                // could be due to having arrays
+                transactions = new JsonReaderHelper().Deserialize<List<TransactionRequest>>(parameterString);
+            }
+
+            Excecute(transactions);
         }
     }
 }
