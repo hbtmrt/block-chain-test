@@ -20,12 +20,19 @@ namespace BlockChainProcessor.Commands
 
             if (wallet == null)
             {
-                throw new WalletNotFoundException();
+                logger.Write(string.Format(Constants.Message.WalletWithoutToken, parameterString));
+                return;
             }
 
             List<string> tokens = wallet.Blocks.Select(b => b.TokenId).ToList();
 
-            logger.Write(string.Format(Constants.Message.WalletCommand, parameterString, tokens.Count));
+            if (tokens.Count == 0)
+            {
+                logger.Write(string.Format(Constants.Message.WalletWithoutToken, parameterString));
+                return;
+            }
+
+            logger.Write(string.Format(Constants.Message.WalletHasTokens, parameterString, tokens.Count));
 
             tokens.ForEach(token =>
             {
