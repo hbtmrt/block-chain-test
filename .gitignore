@@ -9,3 +9,6 @@
 /BlockChainProcessor/.vs/BlockChainProcessor/v16/.suo
 /BlockChainProcessor/BlockChainProcessor.Core/obj
 /BlockChainProcessor/BlockChainProcessor.Core/bin/Debug/netcoreapp3.1
+/BlockChainProcessor/BlockChainProcessor/bin/Release/netcoreapp3.1
+/BlockChainProcessor/BlockChainProcessor.Core/bin/Release/netcoreapp3.1
+/BlockChainProcessor/BlockChainProcessor/Properties/PublishProfiles

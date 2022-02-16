@@ -24,6 +24,8 @@ namespace BlockChainProcessor.Core.Statics
             public const string ParameterFormatError = "Error. There is something wrong with the parameter string. Please check and try again.";
             public const string NotAValidFilePath = "Error. The file path provided is not valid.";
             public const string FileNotExist = "Error. The file does not exist.";
+            public const string NftOwned = "Token {0} is owned by {1}.";
+            public const string NftNotOwned = "Token {0} is not owned by any wallet.";
         }
     }
 }
