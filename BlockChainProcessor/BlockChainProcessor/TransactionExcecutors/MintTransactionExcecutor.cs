@@ -1,9 +1,7 @@
 ﻿using BlockChainProcessor.Core.CustomExceptions;
 using BlockChainProcessor.Core.Models;
 using BlockChainProcessor.Core.Requests;
-using BlockChainProcessor.Core.Statics;
-using BlockChainProcessor.Factories;
-using BlockChainProcessor.Loggers;
+using System;
 using System.Linq;
 
 namespace BlockChainProcessor.TransactionExcecutors
@@ -11,13 +9,19 @@ namespace BlockChainProcessor.TransactionExcecutors
     public sealed class MintTransactionExcecutor : ITransactionExcecutor
     {
         private readonly BlockChain blockChain = BlockChain.Instance();
-        private readonly ILogger logger = new LoggerFactory().CreateLogger();
 
-        public void Excecute(TransactionRequest transaction)
+        public bool Excecute(TransactionRequest transactionRequest)
         {
-            Block block = CreateBlock(transaction.TokenId);
-            AddToWallet(transaction.Address, block);
-            logger.Write(string.Format(Constants.Message.MintSuccessfulFormat, 1));
+            try
+            {
+                Block block = CreateBlock(transactionRequest.TokenId);
+                AddToWallet(transactionRequest.Address, block);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         private void AddToWallet(string address, Block block)

@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BlockChainProcessor.Helpers
+﻿namespace BlockChainProcessor.Helpers
 {
     public sealed class ArgumentHelper
     {
-        public string GetCommandString(string[] args)
+        internal string GetCommandString(string commandArgument)
         {
-            int firstArgumentIndex = 0;
-            return args[firstArgumentIndex].Replace("--", "");
+            return commandArgument.Split("program --")[1].Split(" ")[0].Trim();
         }
 
-        public string GetParameterString(string[] args)
+        internal string GetParameterString(string commandArgument)
         {
-            return string.Join("", args).Replace("--", "").Replace("\'", "").Replace(GetCommandString(args), "");
+            return commandArgument.Split($"program --{GetCommandString(commandArgument)}")[1].Replace("\'", "").Trim();
         }
     }
 }

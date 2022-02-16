@@ -7,6 +7,6 @@ namespace BlockChainProcessor.TransactionExcecutors
 {
     public interface ITransactionExcecutor
     {
-        void Excecute(TransactionRequest transaction);
+        bool Excecute(TransactionRequest transactionRequest);
     }
 }

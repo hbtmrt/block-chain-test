@@ -1,6 +1,8 @@
 ﻿using BlockChainProcessor.Commands;
+using BlockChainProcessor.Core.Statics;
 using BlockChainProcessor.Factories;
 using BlockChainProcessor.Helpers;
+using BlockChainProcessor.Loggers;
 using System;
 
 namespace BlockChainProcessor
@@ -8,27 +10,33 @@ namespace BlockChainProcessor
     internal class Program
     {
         private static readonly ArgumentHelper argumentHelper = new ArgumentHelper();
+        private static readonly ILogger logger = new LoggerFactory().CreateLogger();
 
         private static void Main(string[] args)
         {
             bool quite = false;
-            string command;
+            string commandArgument;
 
             while (!quite)
             {
-                command = Console.ReadLine();
+                commandArgument = Console.ReadLine();
 
                 try
                 {
-                    if (string.IsNullOrWhiteSpace(command))
+                    if (string.IsNullOrWhiteSpace(commandArgument))
                     {
-                        // TODO: Show error message.
-                        Console.WriteLine("No arguments has been provided.");
+                        logger.Write(Constants.Message.NoArgumentProvided);
                         continue;
                     }
 
-                    string commandString = argumentHelper.GetCommandString(args);
-                    string parameterString = argumentHelper.GetParameterString(args);
+                    if (!commandArgument.StartsWith("program"))
+                    {
+                        logger.Write(Constants.Message.CommandShouldStartWithProgram);
+                        continue;
+                    }
+
+                    string commandString = argumentHelper.GetCommandString(commandArgument);
+                    string parameterString = argumentHelper.GetParameterString(commandArgument);
 
                     ICommandProcessor commandProcessor = new CommandProcessorFactory().CreateInstance(commandString);
                     commandProcessor.Excecute(parameterString);
@@ -36,6 +44,7 @@ namespace BlockChainProcessor
                 catch (Exception ex)
                 {
                     // Show error and let the user to type again.
+                    Console.WriteLine("Error....");
                 }
             }
         }

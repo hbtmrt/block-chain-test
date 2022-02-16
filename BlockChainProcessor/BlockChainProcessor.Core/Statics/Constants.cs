@@ -18,6 +18,8 @@ namespace BlockChainProcessor.Core.Statics
         public static class Message
         {
             public const string MintSuccessfulFormat = "Read {0} transaction(s)";
+            public const string NoArgumentProvided = "Error. No arguments have been provided.";
+            public const string CommandShouldStartWithProgram = "Error. All commands should start with \"program\".";
         }
     }
 }
