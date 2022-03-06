@@ -11,9 +11,6 @@ namespace BlockChainProcessor.Commands
     {
         public void Excecute(string parameterString)
         {
-            // check it is a file path; if not throw exception
-            // Read the file
-            // using readline
             if (!File.Exists(parameterString))
             {
                 throw new BCFileNotExistException();

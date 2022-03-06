@@ -5,6 +5,8 @@
     /// </summary>
     public static class Constants
     {
+        public const string DataStoreFilePath = @"data-store.json";
+
         public static class Command
         {
             public const string ReadLine = "read-inline";

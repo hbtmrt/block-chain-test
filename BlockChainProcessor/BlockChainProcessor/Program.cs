@@ -15,8 +15,12 @@ namespace BlockChainProcessor
 
         private static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.ProcessExit += OnProcessExit;
+
             bool quite = false;
             string commandArgument;
+
+            BlockChain.Instance().LoadData();
 
             while (!quite)
             {
@@ -59,6 +63,11 @@ namespace BlockChainProcessor
                     logger.Write(Constants.Message.CommonError);
                 }
             }
+        }
+
+        private static void OnProcessExit(object sender, EventArgs e)
+        {
+            BlockChain.Instance().PersistData();
         }
     }
 }
